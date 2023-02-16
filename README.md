@@ -18,6 +18,12 @@ Install dependencies:
 yarn install
 ```
 
+Using docker:
+
+```bash
+docker run -v "$PWD":/usr/src/app -w /usr/src/app --user 1000:1000 node:19.5-bullseye-slim npm install
+```
+
 ## Development
 
 ```bash
@@ -55,3 +61,5 @@ yarn preview
 ---
 
 For a detailed explanation of how things work, check out [Docus](https://docus.dev).
+
+
