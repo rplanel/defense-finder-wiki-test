@@ -1,0 +1,21 @@
+# The Docker image that will be used to build your app
+image: node:19.5-bullseye-slim
+# Functions that should be executed before the build script is run
+before_script:
+  - npm ci
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  only:
+    - main
+  script:
+    - NUXT_APP_BASE_URL=/docus-test/ npm run generate
+    - rm -rf public
+    - mv .output/public public
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
