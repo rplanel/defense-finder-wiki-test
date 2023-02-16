@@ -13,7 +13,7 @@ export default defineAppConfig({
     },
     header: {
       title: 'Microbial Warfare',
-      logo: true,
+      logo: false,
       showLinkIcon: true,
       exclude: []
     },
