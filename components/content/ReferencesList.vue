@@ -1,18 +1,20 @@
 <template>
-  <ProseOl v-if="computedItems.length > 0">
-    <ProseA
-      v-for="item in computedItems"
-      :key="item.DOI"
-      :href="item.href"
-      target="blank"
-    >
-      <ProseLi class="refArticle">
-        <div class="ref-title">{{ item.title }}.</div>
-        <div class="ref-authors">{{ item.authorsString }}</div>
-        <div>{{ item?.containerTitle }}</div>
-      </ProseLi>
-    </ProseA>
-  </ProseOl>
+  <ClientOnly fallback-tag="span" fallback="Loading references...">
+    <ProseOl v-if="computedItems.length > 0">
+      <ProseA
+        v-for="item in computedItems"
+        :key="item.DOI"
+        :href="item.href"
+        target="blank"
+      >
+        <ProseLi class="refArticle">
+          <div class="ref-title">{{ item.title }}.</div>
+          <div class="ref-authors">{{ item.authorsString }}</div>
+          <div>{{ item?.containerTitle }}</div>
+        </ProseLi>
+      </ProseA>
+    </ProseOl>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
