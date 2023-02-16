@@ -12,7 +12,7 @@ pages:
   only:
     - main
   script:
-    - NUXT_APP_BASE_URL=/docus-test/ npm run generate
+    - NUXT_APP_BASE_URL=/wiki/ npm run generate
     - rm -rf public
     - mv .output/public public
   artifacts:
