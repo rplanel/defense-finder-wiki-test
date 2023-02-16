@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  nuxt:
+    build:
+      context: .
+      target: dev
+    container_name: docus_dev
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.nuxt
+    ports:
+      - "3000:3000"
+      - "24678:24678"
+      - "4000:4000"
