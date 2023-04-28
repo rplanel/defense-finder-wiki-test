@@ -1,5 +1,6 @@
 ---
 title: Introduction
+layout: custom
 ---
 
 # Introduction

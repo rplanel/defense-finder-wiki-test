@@ -4,7 +4,7 @@ services:
     build:
       context: .
       target: dev
-    container_name: docus_dev
+    container_name: frontend
     volumes:
       - .:/usr/src/app
       - defense-finder-wiki-node-modules:/usr/src/app/node_modules

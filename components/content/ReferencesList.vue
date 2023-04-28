@@ -83,16 +83,3 @@ function getReferenceUrl(doi) {
   return new URL(doi, doiBaseUrl.value).href;
 }
 </script>
-
-<style lang="ts">
-css({
-    '.refArticle': {
-   'margin-top': '{space.4}',
-},
-'.ref-title': {
-    fontWeight: '{fontWeight.bold}',
-},
-'.ref-authors': {
-    fontSize: '{fontSize.sm}',
-}})
-</style>

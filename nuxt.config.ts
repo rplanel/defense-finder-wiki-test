@@ -1,11 +1,16 @@
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  extends: '@nuxt-themes/docus',
+  modules: ['@nuxt/content', '@invictus.codes/nuxt-vuetify'],
   content: {
-    // issue with docker compose to open ws on port 4000
-    watch: false
+    documentDriven: true
   },
-  modules: [
-    '@vueuse/nuxt',
-  ],
+  vuetify: {
+    vuetifyOptions: {
+      // @TODO: list all vuetify options
+    },
+    moduleOptions: {
+      treeshaking: true,
 
+    },
+  }
 })
