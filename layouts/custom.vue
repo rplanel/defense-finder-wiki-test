@@ -30,10 +30,4 @@
 const { navigation, page, surround, globals } = useContent();
 
 const drawer = ref(true);
-
-console.log(page.value);
-
-console.log("navigation", navigation.value);
-console.log(surround.value);
-console.log(globals.value);
 </script>
