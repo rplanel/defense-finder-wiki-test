@@ -8,17 +8,16 @@ const props = defineProps<{
 </script>
 
 <template>
-  <template v-for="link in props.links">
-    <v-list-item
-      nav
-      :title="link.text"
-      :value="link.id"
-      :href="`#${link.id}`"
-      variant="plain"
-    >
-      <template v-if="link?.children?.length > 0 && link.depth <= 3">
-        <TableOfContent :links="link.children" />
-      </template>
-    </v-list-item>
-  </template>
+  <v-navigation-drawer id="app-toc" location="right" :border="0" permanent>
+    <template #prepend>
+      <div class="text-h6 font-weight-medium mt-4 mb-2 ms-4">Contents</div>
+    </template>
+    <ul class="px-2 py-2">
+      <NavTableOfContentItem :links="props.links" /></ul
+  ></v-navigation-drawer>
 </template>
+<style scoped>
+#app-toc ul {
+  list-style-type: none;
+}
+</style>

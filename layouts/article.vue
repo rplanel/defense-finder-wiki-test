@@ -2,9 +2,8 @@
   <v-card>
     <v-app>
       <NavNavbar />
-      <v-navigation-drawer location="right" permanent>
-        <v-list> <NavTableOfContent :links="page.body.toc.links" /> </v-list
-      ></v-navigation-drawer>
+
+      <NavTableOfContent :links="page.body.toc.links" />
       <v-main style="min-height: 300px">
         <v-container class="px-8">
           <slot />

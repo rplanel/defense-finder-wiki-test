@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     },
     moduleOptions: {
       treeshaking: true,
+      // styles: "sass"
 
     },
   }
