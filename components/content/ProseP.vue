@@ -1,3 +1,5 @@
 <template>
-  <v-card-text><slot /></v-card-text>
+  <v-card flat color="transparent">
+    <v-card-text class="px-0 py-2"><slot /></v-card-text>
+  </v-card>
 </template>

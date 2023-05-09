@@ -1,19 +1,17 @@
 <template>
-  <h1 class="text-h3 font-weight-bold" :id="id">
+  <h2 class="text-h4 font-weight-bold" :id="id">
     <a v-if="id && generate" :href="`#${id}`" class="text-decoration-none">
       <slot />
     </a>
     <slot v-else />
-  </h1>
+  </h2>
 </template>
 
 <script setup lang="ts">
 import { useRuntimeConfig } from "#imports";
 defineProps<{ id?: string }>();
-const heading = 1;
+const heading = 2;
 const { anchorLinks } = useRuntimeConfig().public.content;
-console.log(anchorLinks);
-
 const generate =
   anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes(heading);
 </script>
