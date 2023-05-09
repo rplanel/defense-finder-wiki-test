@@ -12,10 +12,11 @@ pages:
   # only:
   #   - main
   script:
-    - NUXT_APP_BASE_URL=/wiki/st npm run generate
+    - NUXT_APP_BASE_URL=/wiki/$CI_COMMIT_REF_SLUG npm run generate
     - rm -rf public
-    - mkdir -p public/st
-    - mv .output/public public/st
+    - mkdir -p public/$CI_COMMIT_REF_SLUG
+    - mv .output/public public/$CI_COMMIT_REF_SLUG
+    - ls -l public
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
