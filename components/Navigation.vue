@@ -16,16 +16,19 @@ const props = defineProps<{
           prepend-icon="mdi-account-circle"
           nav
           :title="navItem.title"
+          active-color="primary"
         ></v-list-item>
       </template>
       <Navigation :navigation="navItem.children" />
     </v-list-group>
-    <v-list-item
-      v-else
-      nav
-      :title="navItem.title"
-      :value="navItem.title"
-      :to="navItem._path"
-    ></v-list-item>
+    <template v-else>
+      <v-list-item
+        nav
+        :title="navItem.title"
+        :value="navItem.title"
+        :to="navItem._path"
+        active-color="primary"
+      ></v-list-item>
+    </template>
   </template>
 </template>
