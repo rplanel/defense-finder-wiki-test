@@ -13,9 +13,9 @@ pages:
   #   - main
   script:
     - NUXT_APP_BASE_URL=/wiki/ npm run generate
-    # - rm -rf public
-    # - mv .output/public public
+    - rm -rf public
+    - mv .output/public public
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
-      - .output/public
+      - public
