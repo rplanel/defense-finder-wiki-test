@@ -13,7 +13,6 @@ const props = defineProps<{
       <template v-slot:activator="{ props }">
         <v-list-item
           v-bind="props"
-          prepend-icon="mdi-account-circle"
           nav
           :title="navItem.title"
           active-color="primary"

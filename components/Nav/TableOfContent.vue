@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
   links: any;
-  depth: {
-    type: number;
-    default: 2;
-  };
 }>();
 
 // const { navigation } = useContent();
@@ -20,7 +16,7 @@ const props = defineProps<{
       :href="`#${link.id}`"
       variant="plain"
     >
-      <template v-if="link?.children && links.depth <= props.depth">
+      <template v-if="link?.children?.length > 0 && link.depth <= 3">
         <TableOfContent :links="link.children" />
       </template>
     </v-list-item>
