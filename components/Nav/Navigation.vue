@@ -13,7 +13,6 @@ const props = defineProps<{
       <template v-slot:activator="{ props }">
         <v-list-item
           v-bind="props"
-          nav
           :title="navItem.title"
           active-color="primary"
         ></v-list-item>
@@ -22,7 +21,6 @@ const props = defineProps<{
     </v-list-group>
     <template v-else>
       <v-list-item
-        nav
         :title="navItem.title"
         :value="navItem.title"
         :to="navItem._path"

@@ -7,14 +7,13 @@
     <v-toolbar-title>Microbial Warefare</v-toolbar-title>
     <v-btn @click="toggleTheme">toggle theme</v-btn>
   </v-app-bar>
-  <v-navigation-drawer v-model="drawer">
+  <v-navigation-drawer v-model="drawer" :border="0">
     <v-card flat>
-      <v-list>
+      <v-list nav density="compact" :lines="false">
         <NavNavigation :navigation="navigation" />
       </v-list>
     </v-card>
   </v-navigation-drawer>
- 
 </template>
 <script setup lang="ts">
 import { useTheme } from "vuetify";
