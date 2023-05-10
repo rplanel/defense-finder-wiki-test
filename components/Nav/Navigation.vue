@@ -15,6 +15,8 @@ const props = defineProps<{
           v-bind="props"
           :title="navItem.title"
           active-color="primary"
+          exact
+          nav
         ></v-list-item>
       </template>
       <Navigation :navigation="navItem.children" />
@@ -25,6 +27,8 @@ const props = defineProps<{
         :value="navItem.title"
         :to="navItem._path"
         active-color="primary"
+        exact
+        nav
       ></v-list-item>
     </template>
   </template>
