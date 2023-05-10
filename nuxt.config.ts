@@ -2,7 +2,9 @@
 export default defineNuxtConfig({
   modules: ['@nuxt/content', '@invictus.codes/nuxt-vuetify'],
   content: {
-    documentDriven: true
+    documentDriven: {
+      injectPage: false
+    }
   },
   vuetify: {
     vuetifyOptions: {

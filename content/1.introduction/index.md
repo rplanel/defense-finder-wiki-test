@@ -9,7 +9,7 @@ Bacteriophages, or phages for short, are viruses that infect bacteria and hijack
 
 In response to this evolutionary pressure, bacteria have developed an arsenal of anti-phage defense systems. The term "defense system" here designates either a single gene or a set of genes, which expression provides the bacteria with some level of resistance against phage infection.
 
-# History
+## History
 
 The first anti-phage defense system was discovered in the early 1950s by two separate teams of researchers (Luria and Human, 1952 ; Bertani and Wiegle 1952). Luria and Human reported a mysterious phenomenon, where one phage was only capable of infecting a specific bacterial strain once. The progeny phages produced by this first round of infection had lost their ability to infect the same strain again, yet remained able to infect other bacterial strains. For them, this could only mean that "the genotype of the host in which a virus reproduces affects the phenotype of the new virus" (Luria and Human, 1952). A similar phenomenon was shortly after described by Bertani and Wiegle.
 
@@ -83,5 +83,3 @@ LURIA SE, HUMAN ML. A nonhereditary, host-induced variation of bacterial viruses
 Makarova KS, Wolf YI, Snir S, Koonin EV. Defense islands in bacterial and archaeal genomes and prediction of novel defense systems. J Bacteriol. 2011 Nov;193(21):6039-56. doi: 10.1128/JB.05535-11. Epub 2011 Sep 9. PMID: 21908672; PMCID: PMC3194920.
 
 Tal N, Sorek R. SnapShot: Bacterial immunity. Cell. 2022 Feb 3;185(3):578-578.e1. doi: 10.1016/j.cell.2021.12.029. PMID: 35120666.
-
-
