@@ -1,20 +1,18 @@
 <template>
   <span :id="id" class="anchor"></span>
-  <h1 class="text-h3 font-weight-bold my-6">
+  <h3 class="text-h6 font-weight-bold my-3">
     <a v-if="id && generate" :href="`#${id}`" class="text-decoration-none">
       <slot />
     </a>
     <slot v-else />
-  </h1>
+  </h3>
 </template>
 
 <script setup lang="ts">
 import { useRuntimeConfig } from "#imports";
 defineProps<{ id?: string }>();
-const heading = 1;
+const heading = 3;
 const { anchorLinks } = useRuntimeConfig().public.content;
-console.log(anchorLinks);
-
 const generate =
   anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes(heading);
 </script>
@@ -22,7 +20,7 @@ const generate =
 a {
   color: inherit;
 }
-anchor {
+.anchor {
   display: block;
   position: relative;
   top: -64px;

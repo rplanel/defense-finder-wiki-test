@@ -1,5 +1,6 @@
 <template>
-  <h2 class="text-h4 font-weight-bold" :id="id">
+  <span :id="id" class="anchor"></span>
+  <h2 class="text-h4 font-weight-bold my-4">
     <a v-if="id && generate" :href="`#${id}`" class="text-decoration-none">
       <slot />
     </a>
@@ -18,5 +19,11 @@ const generate =
 <style scoped>
 a {
   color: inherit;
+}
+.anchor {
+  display: block;
+  position: relative;
+  top: -64px;
+  visibility: hidden;
 }
 </style>
