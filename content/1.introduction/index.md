@@ -83,3 +83,17 @@ LURIA SE, HUMAN ML. A nonhereditary, host-induced variation of bacterial viruses
 Makarova KS, Wolf YI, Snir S, Koonin EV. Defense islands in bacterial and archaeal genomes and prediction of novel defense systems. J Bacteriol. 2011 Nov;193(21):6039-56. doi: 10.1128/JB.05535-11. Epub 2011 Sep 9. PMID: 21908672; PMCID: PMC3194920.
 
 Tal N, Sorek R. SnapShot: Bacterial immunity. Cell. 2022 Feb 3;185(3):578-578.e1. doi: 10.1016/j.cell.2021.12.029. PMID: 35120666.
+
+
+::references-list
+---
+items:
+    - 10.1126/science.1138140
+    - 10.1038/nmicrobiol.2017.92
+    - 10.1128/jb.65.2.113-121.1953
+    - 10.1126/science.aar4120
+    - 10.1126/science.aba0372
+    - 10.1038/s41586-019-1894-8
+    - 10.1128/jb.64.4.557-569.1952
+---
+::
