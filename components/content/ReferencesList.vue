@@ -1,19 +1,21 @@
 <template>
   <ClientOnly fallback-tag="span" fallback="Loading references...">
-    <ProseOl v-if="computedItems.length > 0">
-      <ProseA
-        v-for="item in computedItems"
-        :key="item.DOI"
-        :href="item.href"
-        target="blank"
-      >
-        <ProseLi class="refArticle">
-          <div class="ref-title">{{ item.title }}.</div>
-          <div class="ref-authors">{{ item.authorsString }}</div>
-          <div>{{ item?.containerTitle }}</div>
-        </ProseLi>
-      </ProseA>
-    </ProseOl>
+    <v-list
+      v-if="computedItems.length > 0"
+      :items="computedItems"
+      item-props
+      lines="three"
+    >
+      <template #subtitle="{ item }">
+        <div>{{ item.subtitle }}</div>
+        <div>{{ item.containerTitle }} ({{ item.year }})</div>
+      </template>
+      <template #prepend="{ item }">
+        <v-avatar>
+          <v-icon>{{ item.prependIcon }}</v-icon>
+        </v-avatar>
+      </template>
+    </v-list>
   </ClientOnly>
 </template>
 
@@ -38,6 +40,9 @@ const fetchedDoi = ref(
           "container-title-short": string;
           "container-title": string;
           abstract: string;
+          published: {
+            "date-parts": string[];
+          };
         };
       }>(url)
         .get()
@@ -47,7 +52,7 @@ const fetchedDoi = ref(
   )
 );
 const computedItems = computed(() => {
-  return fetchedDoi.value.map((doi) => {
+  return fetchedDoi.value.map((doi, i) => {
     if (doi) {
       const {
         DOI,
@@ -55,15 +60,19 @@ const computedItems = computed(() => {
         "container-title-short": cts,
         "container-title": ct,
         abstract,
+        published,
         ...rest
       } = doi.message;
       return {
         DOI,
         title: title[0],
-        authorsString: toAuthorsString(doi?.message?.author ?? []),
+        subtitle: toAuthorsString(doi?.message?.author ?? []),
         containerTitle: cts?.length > 0 ? cts[0] : ct?.length > 0 ? ct[0] : "",
         abstract,
+        year: published["date-parts"][0][0],
         href: getReferenceUrl(DOI),
+        target: "_blank",
+        prependIcon: "mdi-newspaper-variant-outline",
       };
     } else {
       return {};
