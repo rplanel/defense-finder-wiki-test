@@ -14,12 +14,13 @@ const headers = ref([{
 
 </script>
 <template>
-    <v-card flat color="transparent">
-        <v-card-title>
-            Defense Systems
-            <v-spacer></v-spacer>
-            <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details></v-text-field>
-        </v-card-title>
+    <v-card flat color="transparent" class="my-5">
+        <v-toolbar>
+            <v-toolbar-title>Defense Systems</v-toolbar-title>
+
+            <v-text-field v-model="search" density="compact" variant="underlined" append-inner-icon="mdi-magnify" label="Search"
+                single-line hide-details class="mx-2"></v-text-field>
+        </v-toolbar>
         <v-data-table :items-per-page="itemsPerParge" v-model:sort-by="sortBy" :headers="headers" :items="props.systems"
             :search="search">
             <template #[`item.system`]="{ item }">
