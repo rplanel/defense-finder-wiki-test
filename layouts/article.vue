@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { page, surround } = useContent();
+console.log(page)
+console.log("surround object!!!!!")
+console.log(surround)
 </script>
 <template>
   <v-card>
@@ -14,20 +17,10 @@ const { page, surround } = useContent();
           </v-card> -->
           <EditGitlab />
           <v-row justify="space-between">
-            <v-col
-              v-for="(surroundPage, i) in surround"
-              :key="surroundPage?._id"
-              cols="auto"
-            >
-              <v-btn
-                v-if="surroundPage"
-                :prepend-icon="i === 0 ? 'mdi-arrow-left' : undefined"
-                :append-icon="i === 1 ? 'mdi-arrow-right' : undefined"
-                variant="outlined"
-                color="primary"
-                :to="surroundPage?._path"
-                >{{ surroundPage?.title }}</v-btn
-              >
+            <v-col v-for="(surroundPage, i) in surround" :key="surroundPage?._id" cols="auto">
+              <v-btn v-if="surroundPage" :prepend-icon="i === 0 ? 'mdi-arrow-left' : undefined"
+                :append-icon="i === 1 ? 'mdi-arrow-right' : undefined" variant="outlined" color="primary"
+                :to="surroundPage?._path">{{ surroundPage?.title }}</v-btn>
             </v-col>
           </v-row>
         </v-container>

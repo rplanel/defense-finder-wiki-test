@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', 'vuetify-nuxt-module'],
   content: {
     documentDriven: {
-      injectPage: false
+      injectPage: false,
     }
   },
   vuetify: {
