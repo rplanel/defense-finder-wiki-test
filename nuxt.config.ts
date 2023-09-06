@@ -1,6 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', '@invictus.codes/nuxt-vuetify'],
+  modules: ['@nuxt/content', 'vuetify-nuxt-module'],
   content: {
     documentDriven: {
       injectPage: false
@@ -8,12 +8,11 @@ export default defineNuxtConfig({
   },
   vuetify: {
     vuetifyOptions: {
-      // @TODO: list all vuetify options
-    },
-    moduleOptions: {
-      treeshaking: true,
-      // styles: "sass"
+      labComponents: true
+    }
+  },
+  devtools: {
+    enabled: false
+  },
 
-    },
-  }
 })

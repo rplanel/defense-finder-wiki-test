@@ -4,15 +4,45 @@ services:
     build:
       context: .
       target: dev
-    container_name: frontend
+    container_name: nuxt
     volumes:
       - .:/usr/src/app
       - defense-finder-wiki-node-modules:/usr/src/app/node_modules
-      - defense-finder-wiki-dotnuxt:/usr/src/app/.nuxt
+      - /usr/src/app/.nuxt
     ports:
       - "3000:3000"
       - "24678:24678"
       - "4000:4000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=main"
+      - "traefik.http.routers.nuxt.service=nuxt-service"
+      - "traefik.http.routers.nuxt.rule=Host(`localhost`)"
+      - "traefik.http.routers.nuxt.entrypoints=web"
+      - "traefik.http.services.nuxt-service.loadbalancer.server.port=3000"
+    networks:
+      - main
+
+  traefik:
+    image: traefik:v2.9
+    command:
+      - "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=true"
+      - "--entrypoints.web.address=:80"
+
+    ports:
+      - "8082:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"      
+    networks:
+      - main
+
 volumes:
   defense-finder-wiki-node-modules:
-  defense-finder-wiki-dotnuxt:
+
+networks:
+  main:
+    driver: bridge
