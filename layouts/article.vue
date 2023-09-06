@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const { page, surround } = useContent();
-console.log(page)
-console.log("surround object!!!!!")
-console.log(surround)
+
 </script>
 <template>
   <v-card>
