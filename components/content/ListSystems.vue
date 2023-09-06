@@ -3,17 +3,32 @@
 const props = defineProps<{
     systems: any;
 }>();
-
+const itemsPerParge = ref(25)
+const search = ref('')
+const sortBy = ref([{ key: 'system', order: 'asc' }])
 const headers = ref([{
     title: "Systems",
     key: "system"
-}])
+}, { title: "Articles", key: "dois" }
+])
 
 </script>
 <template>
-    <v-card>
-        <v-card-text>
-            <v-data-table items-per-page="5" :headers="headers" :items="props.systems" class="elevation-1"></v-data-table>
-        </v-card-text>
+    <v-card flat color="transparent">
+        <v-card-title>
+            Defense Systems
+            <v-spacer></v-spacer>
+            <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details></v-text-field>
+        </v-card-title>
+        <v-data-table :items-per-page="itemsPerParge" v-model:sort-by="sortBy" :headers="headers" :items="props.systems"
+            :search="search">
+            <template #[`item.system`]="{ item }">
+                <v-chip variant="text" link :to="`/defense-systems/${item.columns.system.toLowerCase()}`">{{
+                    item.columns.system }}</v-chip>
+            </template>
+            <template #[`item.dois`]="{ item }">
+                <ReferencesList :items="item.columns.dois"></ReferencesList>
+            </template>
+        </v-data-table>
     </v-card>
 </template>
