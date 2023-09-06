@@ -14,8 +14,8 @@ export default defineNuxtConfig({
   devtools: {
     enabled: false
   },
-  app: {
-    baseURL: '/defense-finder-wiki-test/',
-  }
+  // app: {
+  //   baseURL: '/defense-finder-wiki-test/',
+  // }
 
 })
