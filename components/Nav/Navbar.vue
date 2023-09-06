@@ -4,7 +4,7 @@
       variant="text"
       @click.stop="drawer = !drawer"
     ></v-app-bar-nav-icon>
-    <v-toolbar-title>Microbial Warefare</v-toolbar-title>
+    <v-toolbar-title>DefenseFinder Wiki</v-toolbar-title>
     <v-btn @click="toggleTheme">toggle theme</v-btn>
   </v-app-bar>
   <v-navigation-drawer v-model="drawer" :border="0">
