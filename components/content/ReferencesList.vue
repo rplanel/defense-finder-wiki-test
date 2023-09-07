@@ -1,11 +1,6 @@
 <template>
   <ClientOnly fallback-tag="span" fallback="Loading references...">
-    <v-list
-      v-if="computedItems.length > 0"
-      :items="computedItems"
-      item-props
-      lines="three"
-    >
+    <v-list v-if="computedItems.length > 0" :items="computedItems" item-props lines="three">
       <template #subtitle="{ item }">
         <div>{{ item.subtitle }}</div>
         <div>{{ item.containerTitle }} ({{ item.year }})</div>
@@ -22,6 +17,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useFetch as useFetchVueUse } from "@vueuse/core";
+
+// import { select, selectAll } from 'unist-util-select';
+
 const props = defineProps<{
   items: string[];
 }>();
