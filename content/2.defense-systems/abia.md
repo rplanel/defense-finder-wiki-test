@@ -32,6 +32,18 @@ A system from *lactococcal plasmid* in *lactococci* has an anti-phage effect aga
 
 ## Relevant abstracts
 
+
+::references-list
+---
+items:
+    - 10.1016/j.mib.2005.06.006
+    - 10.1023/A:1002027321171
+    - 10.1093/nar/gkac467
+---
+::
+
+<!-- 10.1016/j.mib.2005.06.006  -->
+
 **Chopin, M.-C., Chopin, A. & Bidnenko, E. Phage abortive infection in lactococci: variations on a theme. Curr Opin Microbiol 8, 473-479 (2005).**
 Abortive infection (Abi) systems, also called phage exclusion, block phage multiplication and cause premature bacterial cell death upon phage infection. This decreases the number of progeny particles and limits their spread to other cells allowing the bacterial population to survive. Twenty Abi systems have been isolated in Lactococcus lactis, a bacterium used in cheese-making fermentation processes, where phage attacks are of economical importance. Recent insights in their expression and mode of action indicate that, behind diverse phenotypic and molecular effects, lactococcal Abis share common traits with the well-studied Escherichia coli systems Lit and Prr. Abis are widespread in bacteria, and recent analysis indicates that Abis might have additional roles other than conferring phage resistance.
 

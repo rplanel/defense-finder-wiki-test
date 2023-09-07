@@ -94,6 +94,15 @@ Subsystem CcAvs4 with a system from *Corallococcus coralloides* in *Escherichia 
 
 ## Relevant abstracts
 
+
+::references-list
+---
+items:
+    - 10.1126/science.abm4096
+    - 10.1126/science.aba0372
+---
+::
+
 **Gao, L. A. et al. Prokaryotic innate immunity through pattern recognition of conserved viral proteins. Science 377, eabm4096 (2022).**
 Many organisms have evolved specialized immune pattern-recognition receptors, including nucleotide-binding oligomerization domain-like receptors (NLRs) of the STAND superfamily that are ubiquitous in plants, animals, and fungi. Although the roles of NLRs in eukaryotic immunity are well established, it is unknown whether prokaryotes use similar defense mechanisms. Here, we show that antiviral STAND (Avs) homologs in bacteria and archaea detect hallmark viral proteins, triggering Avs tetramerization and the activation of diverse N-terminal effector domains, including DNA endonucleases, to abrogate infection. Cryo-electron microscopy reveals that Avs sensor domains recognize conserved folds, active-site residues, and enzyme ligands, allowing a single Avs receptor to detect a wide variety of viruses. These findings extend the paradigm of pattern recognition of pathogen-specific proteins across all three domains of life.
 

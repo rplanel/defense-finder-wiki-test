@@ -1,15 +1,26 @@
 <template>
   <ClientOnly fallback-tag="span" fallback="Loading references...">
-    <v-list v-if="computedItems.length > 0" :items="computedItems" item-props lines="three">
-      <template #subtitle="{ item }">
-        <div>{{ item.subtitle }}</div>
-        <div>{{ item.containerTitle }} ({{ item.year }})</div>
-      </template>
-      <template #prepend="{ item }">
-        <v-avatar>
-          <v-icon>{{ item.prependIcon }}</v-icon>
-        </v-avatar>
-      </template>
+    <v-list v-if="computedItems.length > 0">
+      <v-list-item v-for="item in computedItems" :key="item.title" :title="item.title" lines="three" :href="item.href"
+        :target="item.target">
+        <template #title="{ title }">
+          <span class="font-weight-bold">{{ title }}</span>
+        </template>
+        <template #prepend>
+          <v-avatar>
+            <v-icon>{{ item.prependIcon }}</v-icon>
+          </v-avatar>
+        </template>
+        <template #subtitle>
+          <div>{{ item.subtitle }}</div>
+          <div>{{ item.containerTitle }} ({{ item.year }})</div>
+        </template>
+        <v-card flat color="transparent" class="text-justify my-2">
+          {{ item.abstract }}
+        </v-card>
+      </v-list-item>
+
+
     </v-list>
   </ClientOnly>
 </template>
@@ -61,12 +72,18 @@ const computedItems = computed(() => {
         published,
         ...rest
       } = doi.message;
+      console.log(abstract)
+      let sanitizedAbstract = abstract
+      if (sanitizedAbstract) {
+        sanitizedAbstract = /\<jats\:p\>(.*)\<\/jats\:p\>/.exec(sanitizedAbstract)?.[1] ?? ''
+      }
+      console.log(sanitizedAbstract)
       return {
         DOI,
         title: title[0],
         subtitle: toAuthorsString(doi?.message?.author ?? []),
         containerTitle: cts?.length > 0 ? cts[0] : ct?.length > 0 ? ct[0] : "",
-        abstract,
+        abstract: sanitizedAbstract,
         year: published["date-parts"][0][0],
         href: getReferenceUrl(DOI),
         target: "_blank",
