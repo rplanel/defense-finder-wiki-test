@@ -2,7 +2,8 @@
   <v-app-bar>
     <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-toolbar-title>DefenseFinder Wiki</v-toolbar-title>
-    <v-btn @click="toggle()">toggle theme</v-btn>
+    <v-btn icon="mdi-theme-light-dark" @click="toggle()">
+    </v-btn>
   </v-app-bar>
   <v-navigation-drawer v-model="drawer" :border="0">
     <v-card flat>

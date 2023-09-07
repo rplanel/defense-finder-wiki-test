@@ -5,7 +5,7 @@ export function useCustomTheme() {
     const isDark = useDark({
       valueDark: 'dark',
       valueLight: 'light',
-      initialValue: 'light',
+      initialValue: 'auto',
       onChanged: (dark: boolean) => {
         $vuetify.theme.global.name.value = dark ? 'dark' : 'light'
       },
