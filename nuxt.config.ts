@@ -1,6 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'vuetify-nuxt-module'],
+  modules: ['@nuxt/content', 'vuetify-nuxt-module', '@vueuse/nuxt'],
   content: {
     documentDriven: {
       injectPage: false,

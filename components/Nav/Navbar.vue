@@ -1,11 +1,8 @@
 <template>
   <v-app-bar>
-    <v-app-bar-nav-icon
-      variant="text"
-      @click.stop="drawer = !drawer"
-    ></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-toolbar-title>DefenseFinder Wiki</v-toolbar-title>
-    <v-btn @click="toggleTheme">toggle theme</v-btn>
+    <v-btn @click="toggle()">toggle theme</v-btn>
   </v-app-bar>
   <v-navigation-drawer v-model="drawer" :border="0">
     <v-card flat>
@@ -16,13 +13,12 @@
   </v-navigation-drawer>
 </template>
 <script setup lang="ts">
-import { useTheme } from "vuetify";
-const { navigation, page, surround, globals } = useContent();
-console.log(page.value);
-const theme = useTheme();
+import { useCustomTheme } from '~/composables/useCustomTheme'
 
-function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
-}
+const { toggle } = useCustomTheme()
+
+const { navigation, page, surround, globals } = useContent();
+
+
 const drawer = ref(true);
 </script>

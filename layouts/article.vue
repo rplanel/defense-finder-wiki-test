@@ -1,10 +1,12 @@
 <script setup lang="ts">
 const { page, surround } = useContent();
+import { useCustomTheme } from '~/composables/useCustomTheme'
 
+const { isDark } = useCustomTheme()
 </script>
 <template>
   <v-card>
-    <v-app>
+    <VApp :theme="isDark ? 'dark' : 'light'">
       <v-main style="min-height: 300px">
         <!-- <v-container class="fill-height w-auto" > -->
         <!-- <v-card flat max-width="1000" min-height="300" color="transparent">
@@ -27,7 +29,7 @@ const { page, surround } = useContent();
       </v-main>
       <NavNavbar />
       <NavTableOfContent :links="page.body.toc.links" />
-    </v-app>
+    </VApp>
   </v-card>
 </template>
 
